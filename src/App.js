@@ -1,9 +1,23 @@
-import ExpenseItem from "./components/ExpenseItem";
+import Expenses from "./components/Expenses";
 function App() {
+  const expense = [
+    {
+      title: "Car Insurance",
+      amount: "Rs 2499.00",
+      date: new Date(2021, 6, 7),
+    },
+    {
+      title: "Computer Desk",
+      amount: "Rs 1450.00",
+      date: new Date(2020, 4, 22),
+    },
+    { title: "Shopping", amount: "Rs 3659.00", date: new Date(2021, 1, 2) },
+    { title: "Cycle", amount: "Rs 7450.00", date: new Date(2020, 9, 10) },
+  ];
+
   return (
     <div>
-      <h2>Let's get started</h2>
-      <ExpenseItem></ExpenseItem>
+      <Expenses expenseData={expense} />
     </div>
   );
 }
