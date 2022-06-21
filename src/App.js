@@ -1,6 +1,11 @@
 import Expenses from "./components/Expenses";
 import NewExpense from "./components/ExpenseInput/NewExpense";
 function App() {
+  const enteredUserDataHandler = function (enteredUserData) {
+    console.log("App.js");
+    console.log(enteredUserData);
+  };
+
   const expense = [
     {
       title: "Car Insurance",
@@ -18,7 +23,7 @@ function App() {
 
   return (
     <div>
-      <NewExpense />
+      <NewExpense onEnteredUserData={enteredUserDataHandler} />
       <Expenses expenseData={expense} />
     </div>
   );
