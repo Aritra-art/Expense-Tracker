@@ -24,13 +24,19 @@ function Expenses(props) {
     return expense.date.getFullYear().toString() === expenseFilter;
   });
 
+  let expensesContent = <p>No Expenses Found</p>;
+
+  if (filteredExpenses.length > 0) {
+    expensesContent = filteredExpenses.map(expenseDataHandler);
+  }
+
   return (
     <div className="expenses">
       <ExpensesFilter
         onFilterDate={expenseFilter}
         onChangeFilter={changeFilterHandler}
       />
-      {filteredExpenses.map(expenseDataHandler)}
+      {expensesContent}
     </div>
   );
 }
