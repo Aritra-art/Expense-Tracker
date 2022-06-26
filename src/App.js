@@ -2,6 +2,7 @@ import Expenses from "./components/Expenses";
 import { useState } from "react";
 import NewExpense from "./components/ExpenseInput/NewExpense";
 import Heading from "./components/Heading";
+import Footer from "./components/Footer";
 
 const dummyExpense = [
   {
@@ -40,6 +41,7 @@ function App() {
       <Heading />
       <NewExpense onEnteredUserData={enteredUserDataHandler} />
       <Expenses expenseData={expense} />
+      <Footer />
     </div>
   );
 }
